@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Card } from './components/Card/Card';
 import { Header } from './components/Header/Header';
@@ -12,7 +12,20 @@ export default function App() {
         <Header />
       </View>
       <View style={styles.card}>
-        <Card />
+        <ScrollView>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ScrollView>
       </View>
       <View style={styles.footer}>
         <Footer />
@@ -32,15 +45,16 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    height: 100,
+    height: 80,
     marginTop: 20,
   },
   card: {
     flex: 1,
-    backgroundColor: '#10b981'
+    paddingTop: 20,
+    // backgroundColor: '#10b981'
   },
   footer: {
-    backgroundColor: '#d9f99d',
+    // backgroundColor: '#d9f99d',
     height: 70,
   }
 });
