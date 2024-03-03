@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
         backgroundColor: "#fff",
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         paddingVertical: 15,
         paddingHorizontal: 10,
         borderRadius: 10,
@@ -23,11 +24,11 @@ export const styles = StyleSheet.create({
         elevation: 13,
 
     },
-    text: {
-        // color: '#fff',
-    },
     checked: {
         height: 20,
         width: 20,
+    },
+    completed: {
+        textDecorationLine: 'line-through',
     }
 })
