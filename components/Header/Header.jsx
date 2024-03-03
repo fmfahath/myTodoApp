@@ -1,9 +1,14 @@
-import { Text } from "react-native";
+import { Text, Image, View } from "react-native";
+import { Styles } from './Header.style';
+import Logo from '../../assets/logo.png';
+
 
 export function Header() {
     return (
         <>
-            <Text>This is card</Text>
+            <View style={Styles.container}>
+                <Image style={Styles.logo} source={Logo} />
+            </View>
         </>
     )
 }   

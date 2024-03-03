@@ -24,14 +24,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // backgroundColor: '#27272a',
     backgroundColor: '#fff',
     // alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 10,
   },
 
   header: {
-    backgroundColor: '#5eead4',
     height: 100,
+    marginTop: 20,
   },
   card: {
     flex: 1,
