@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View, } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Text, View, } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Card } from './components/Card/Card';
 import { Header } from './components/Header/Header';
@@ -49,8 +49,17 @@ export default function App() {
 
   // long press delete todo item
   const deleteItem = (todoItem) => {
-    const remainingData = todoList.filter(item => item.id !== todoItem.id);
-    setTodoList(remainingData);
+
+    Alert.alert('Delete', 'Do you want to delete this item?', [
+      {
+        text: 'delete',
+        onPress: () => {
+          const remainingData = todoList.filter(item => item.id !== todoItem.id);
+          setTodoList(remainingData);
+        },
+      },
+      { text: 'cancel' }
+    ])
   }
 
   return (
