@@ -1,7 +1,7 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { Styles } from './Footer.style';
 
-export function Footer({ activeTab, changeActiveTab }) {
+export function Footer({ activeTab, changeActiveTab, deleteItem }) {
     return (
         <>
             <View style={Styles.tabs}>

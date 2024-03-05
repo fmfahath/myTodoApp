@@ -47,6 +47,12 @@ export default function App() {
     }
   }
 
+  // long press delete todo item
+  const deleteItem = (todoItem) => {
+    const remainingData = todoList.filter(item => item.id !== todoItem.id);
+    setTodoList(remainingData);
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -54,7 +60,7 @@ export default function App() {
       </View>
       <View style={styles.card}>
         <ScrollView>
-          {filteredList().map((item) => <Card key={item.id} todoItem={item} updateTodo={updateTodo} />)}
+          {filteredList().map((item) => <Card key={item.id} todoItem={item} updateTodo={updateTodo} deleteItem={deleteItem} />)}
         </ScrollView>
       </View>
       <View style={styles.footer}>

@@ -3,12 +3,15 @@ import Checked from '../../assets/checked.png';
 import { styles } from './Card.style';
 
 
-export function Card({ todoItem, updateTodo }) {
+export function Card({ todoItem, updateTodo, deleteItem }) {
 
 
     return (
         <>
-            <TouchableOpacity onPress={() => updateTodo(todoItem)}>
+            <TouchableOpacity
+                onPress={() => updateTodo(todoItem)}
+                onLongPress={() => deleteItem(todoItem)}
+            >
                 <View style={styles.container}>
                     <Text style={todoItem.isCompleted == true && styles.completed}>{todoItem.title}</Text>
                     {todoItem.isCompleted == true && <Image style={styles.checked} source={Checked} />}
