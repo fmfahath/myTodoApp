@@ -7,6 +7,6 @@ export const Styles = StyleSheet.create({
     },
 
     active: {
-        color: 'red',
+        color: '#ef4444',
     }
 })

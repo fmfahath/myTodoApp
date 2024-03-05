@@ -9,20 +9,29 @@ import { useState } from 'react';
 export default function App() {
 
 
-  const todoList = [
+  const [todoList, setTodoList] = useState([
     { id: 1, title: "React Native", isCompleted: true },
     { id: 2, title: "Laravel", isCompleted: false },
     { id: 3, title: "Node JS", isCompleted: true },
     { id: 4, title: "AWS", isCompleted: false },
     { id: 5, title: "PHP", isCompleted: true },
     { id: 6, title: "Next JS", isCompleted: true },
-  ]
+  ]);
 
   // get active tab from footer
   const [activeTab, setActiveTab] = useState("all");
 
   const changeActiveTab = (tabValue) => {
     setActiveTab(tabValue);
+  }
+
+  // check / uncheck function
+  const updateTodo = (todoItem) => {
+    const copyTodoList = [...todoList];
+    const index = copyTodoList.findIndex((item) => item.id == todoItem.id);
+    const updatedTodoItem = { ...todoItem, isCompleted: !todoItem.isCompleted };
+    copyTodoList[index] = updatedTodoItem;
+    setTodoList(copyTodoList);
   }
 
   return (
@@ -32,7 +41,7 @@ export default function App() {
       </View>
       <View style={styles.card}>
         <ScrollView>
-          {todoList.map((item) => <Card todoList={item} />)}
+          {todoList.map((item) => <Card key={item.id} todoItem={item} updateTodo={updateTodo} />)}
         </ScrollView>
       </View>
       <View style={styles.footer}>
