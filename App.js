@@ -3,6 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Card } from './components/Card/Card';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { useState } from 'react';
 
 
 export default function App() {
@@ -12,8 +13,17 @@ export default function App() {
     { id: 1, title: "React Native", isCompleted: true },
     { id: 2, title: "Laravel", isCompleted: false },
     { id: 3, title: "Node JS", isCompleted: true },
-    { id: 4, title: "AWS", isCompleted: true },
+    { id: 4, title: "AWS", isCompleted: false },
+    { id: 5, title: "PHP", isCompleted: true },
+    { id: 6, title: "Next JS", isCompleted: true },
   ]
+
+  // get active tab from footer
+  const [activeTab, setActiveTab] = useState("all");
+
+  const changeActiveTab = (tabValue) => {
+    setActiveTab(tabValue);
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -26,7 +36,7 @@ export default function App() {
         </ScrollView>
       </View>
       <View style={styles.footer}>
-        <Footer />
+        <Footer activeTab={activeTab} changeActiveTab={changeActiveTab} />
       </View>
     </SafeAreaView>
   );
