@@ -73,7 +73,7 @@ export default function App() {
         </ScrollView>
       </View>
       <View style={styles.footer}>
-        <Footer activeTab={activeTab} changeActiveTab={changeActiveTab} />
+        <Footer activeTab={activeTab} changeActiveTab={changeActiveTab} data={todoList} />
       </View>
     </SafeAreaView>
   );
